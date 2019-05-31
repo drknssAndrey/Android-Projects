@@ -10,16 +10,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.andreybalbino.youtube.R;
+import com.andreybalbino.youtube.model.Item;
 import com.andreybalbino.youtube.model.Video;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterVideo  extends RecyclerView.Adapter<AdapterVideo.MyViewHolder> {
-    private List<Video> videos = new ArrayList<>();
+    private List<Item> videos = new ArrayList<>();
     private Context context;
 
-    public AdapterVideo(List<Video> videos, Context context) {
+    public AdapterVideo(List<Item> videos, Context context) {
         this.videos = videos;
         this.context = context;
     }
@@ -33,8 +35,11 @@ public class AdapterVideo  extends RecyclerView.Adapter<AdapterVideo.MyViewHolde
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        Video video = videos.get(i);
-        myViewHolder.titulo.setText(video.getTitulo());
+        Item video = videos.get(i);
+        myViewHolder.titulo.setText(video.snippet.title);
+
+        String url = video.snippet.thumbnails.high.url;
+        Picasso.get().load(url).into(myViewHolder.capa);
     }
 
     @Override
