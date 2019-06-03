@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "623989874182",
+    "firebase_url": "https://projeto-teste-f8a0f.firebaseio.com",
+    "project_id": "projeto-teste-f8a0f",
+    "storage_bucket": "projeto-teste-f8a0f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623989874182:android:cbdf00092102bbb9",
+        "android_client_info": {
+          "package_name": "com.andreybalbino.olx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623989874182-m8og030t0h5lpuaa875h4msja00gij42.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.andreybalbino.olx",
+            "certificate_hash": "559defc2e0a8ac805b92ccc75a5352eeac76cf2f"
+          }
+        },
+        {
+          "client_id": "623989874182-tm4alv1hvrr089kuhmktu2kclkj8bo1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLwHN2KHgf8rWrXR0rF2CKaRq9ZaLf4vs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623989874182-tm4alv1hvrr089kuhmktu2kclkj8bo1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
