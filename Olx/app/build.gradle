@@ -35,6 +35,18 @@ dependencies {
 
     //dependencia para mascara moeda
     implementation 'com.github.BlacKCaT27:CurrencyEditText:2.0.2'
+
+    //dependencia para mascara telefone
+    implementation 'com.github.santalu:mask-edittext:1.0.7'
+
+    //dependencia dialog de progresso
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+
+    //dependencia picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //dependencia do carrossel
+    implementation 'com.synnapps:carouselview:0.1.5'
 }
 apply plugin: 'com.google.gms.google-services'
 android.defaultConfig.vectorDrawables.useSupportLibrary = true
