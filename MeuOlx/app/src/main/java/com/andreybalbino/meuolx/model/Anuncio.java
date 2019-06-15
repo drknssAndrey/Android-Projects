@@ -3,9 +3,10 @@ package com.andreybalbino.meuolx.model;
 import com.andreybalbino.meuolx.helper.ConfiguracaoFirebase;
 import com.google.firebase.database.DatabaseReference;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Anuncio {
+public class Anuncio implements Serializable {
     private String id;
     private String estado;
     private String categoria;
@@ -24,6 +25,24 @@ public class Anuncio {
         String idUsuarioLogado = ConfiguracaoFirebase.getIdUsuarioLogado();
         DatabaseReference databaseReference = ConfiguracaoFirebase.getDatabaseReference();
         databaseReference.child("meus_anuncios").child(idUsuarioLogado).child(getId()).setValue(this);
+
+        salvarAnuncioPublico();
+    }
+    private void salvarAnuncioPublico(){
+        DatabaseReference databaseReference = ConfiguracaoFirebase.getDatabaseReference();
+        databaseReference.child("anuncios").child(getEstado()).child(getCategoria()).child(getId()).setValue(this);
+    }
+    public void remover(){
+        String idUsuario = ConfiguracaoFirebase.getIdUsuarioLogado();
+        DatabaseReference anuncioRef = ConfiguracaoFirebase.getDatabaseReference().child("meus_anuncios").child(idUsuario).child(getId());
+        anuncioRef.removeValue();
+        removerAnuncioPublico();
+
+    }
+    private void removerAnuncioPublico(){
+        DatabaseReference anuncioRef = ConfiguracaoFirebase.getDatabaseReference().child("anuncios").child(getEstado()).child(getCategoria()).child(getId());
+        anuncioRef.removeValue();
+
     }
 
     public String getId() {

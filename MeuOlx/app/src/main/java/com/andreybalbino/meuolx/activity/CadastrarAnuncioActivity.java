@@ -23,7 +23,6 @@ import com.andreybalbino.meuolx.helper.ConfiguracaoFirebase;
 import com.andreybalbino.meuolx.helper.Permissoes;
 import com.andreybalbino.meuolx.model.Anuncio;
 import com.blackcat.currencyedittext.CurrencyEditText;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -41,6 +40,7 @@ public class CadastrarAnuncioActivity extends AppCompatActivity implements View.
     private MaskEditText campoTelefone;
     private Spinner spinnerEstado, spinnerCategoria;
     private List<String> listFotos = new ArrayList<>();
+    private List<String> urlFotosFirebase = new ArrayList<>();
     private Button botaoCadastrar;
     private String[] permissoes = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE};
     private Anuncio anuncio;
@@ -64,9 +64,10 @@ public class CadastrarAnuncioActivity extends AppCompatActivity implements View.
         botaoCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog = new SpotsDialog.Builder().setContext(CadastrarAnuncioActivity.this).setMessage("Salvando anuncio").setCancelable(false).build();
-                dialog.show();
+
                 if (verificarCampos()) {
+                    dialog = new SpotsDialog.Builder().setContext(CadastrarAnuncioActivity.this).setMessage("Salvando anuncio").setCancelable(false).build();
+                    dialog.show();
                     configurarAnuncio();
                     salvarAnuncioStorage();
                 }
@@ -183,12 +184,11 @@ public class CadastrarAnuncioActivity extends AppCompatActivity implements View.
     private void configurarAnuncio() {
         anuncio = new Anuncio();
         anuncio.setEstado(spinnerEstado.getSelectedItem().toString());
-        anuncio.setDescricao(spinnerCategoria.getSelectedItem().toString());
+        anuncio.setCategoria(spinnerCategoria.getSelectedItem().toString());
         anuncio.setTitulo(campoTitulo.getText().toString());
         anuncio.setValor(campoPreco.getText().toString());
         anuncio.setTelefone(campoTelefone.getText().toString());
-        anuncio.setDescricao(campoTelefone.getText().toString());
-        anuncio.setImagens(listFotos);
+        anuncio.setDescricao(campoDescricao.getText().toString());
     }
 
     private void configurarSpinner() {
@@ -216,11 +216,14 @@ public class CadastrarAnuncioActivity extends AppCompatActivity implements View.
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     if (cont == listFotos.size()) {
+                        Uri url = taskSnapshot.getDownloadUrl();
+                        String caminhoFoto = url.toString();
+                        urlFotosFirebase.add(caminhoFoto);
+                        anuncio.setImagens(urlFotosFirebase);
                         anuncio.salvar();
                         dialog.dismiss();
                         finish();
                     }
-                    Toast.makeText(CadastrarAnuncioActivity.this, "AAAAAAAAAAAA", Toast.LENGTH_SHORT).show();
                 }
             });
         }
