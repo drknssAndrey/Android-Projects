@@ -141,8 +141,15 @@ public class CorridasActivity extends AppCompatActivity implements OnMapReadyCal
             case Requisicao.STATUS_FINALIZADA:
                 requisicaoFinalizada();
                 break;
+            case Requisicao.STATUS_CANCELADA:
+                requisicaoFinalizada();
+                break;
         }
 
+    }
+    private void requisicaoCancelada(){
+        Toast.makeText(this, "Requisição foi cancelada pelo passageiro!", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(CorridasActivity.this, RequisicoesActivity.class));
     }
 
     private void centralizarMarcador(LatLng local) {
@@ -168,7 +175,7 @@ public class CorridasActivity extends AppCompatActivity implements OnMapReadyCal
 
         //calcular distancia
         float distancia = Local.calcularDistancia(localPassageiro, localDestino);
-        float valor = distancia * 4;
+        float valor = distancia * 8;
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
         String resultado = decimalFormat.format(valor);
         buttonAceitarCorrida.setText("Corrida finalizada - " + resultado);
@@ -318,7 +325,11 @@ public class CorridasActivity extends AppCompatActivity implements OnMapReadyCal
     }
 
     private void adicionaMarcadorDestino(LatLng localizacao, String titulo) {
+        if (marcadorPassageiro != null)
+            marcadorPassageiro.remove();
 
+        if (marcadorDestino != null)
+            marcadorDestino.remove();
 
         marcadorDestino = mMap.addMarker(
                 new MarkerOptions()
@@ -468,6 +479,12 @@ public class CorridasActivity extends AppCompatActivity implements OnMapReadyCal
         } else {
             Intent i = new Intent(CorridasActivity.this, RequisicoesActivity.class);
             startActivity(i);
+        }
+
+        //verificar status da requisicao para depois encerrar
+        if (statusRequisicao!=null && !statusRequisicao.isEmpty()){
+            requisicao.setStatus(Requisicao.STATUS_ENCERRADA);
+            requisicao.atualizarStatus();
         }
         return false;
     }

@@ -18,6 +18,8 @@ public class Requisicao implements Serializable {
     public static final String STATUS_A_CAMINHO = "acaminho";
     public static final String STATUS_VIAGEM = "viagem";
     public static final String STATUS_FINALIZADA = "finalizada";
+    public static final String STATUS_ENCERRADA = "encerrada";
+    public static final String STATUS_CANCELADA = "cancelada";
 
     public Requisicao() {
     }
