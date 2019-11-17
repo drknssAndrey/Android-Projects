@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "321068396850",
+    "firebase_url": "https://controle-financas-9c5ea.firebaseio.com",
+    "project_id": "controle-financas-9c5ea",
+    "storage_bucket": "controle-financas-9c5ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321068396850:android:4175084b657dec677a672b",
+        "android_client_info": {
+          "package_name": "com.andreybalbino.controlefinancas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "321068396850-4vprkl3et3varmsmluuri9s4deqnbusc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.andreybalbino.controlefinancas",
+            "certificate_hash": "559defc2e0a8ac805b92ccc75a5352eeac76cf2f"
+          }
+        },
+        {
+          "client_id": "321068396850-rlar1smutdns6v2atplmslebqbj8e06p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD74v5fnb-8OEENW5g5rEfvlgT32zvInA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321068396850-rlar1smutdns6v2atplmslebqbj8e06p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -242,6 +242,7 @@ public class CadastrarAnuncioActivity extends AppCompatActivity implements View.
             String caminhoImagem = imagemSelecionada.toString();
 
             //configura imagem no imageView
+
             if (requestCode == 1) {
                 imagem1.setImageURI(imagemSelecionada);
             } else if (requestCode == 2) {
