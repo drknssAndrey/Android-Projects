@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "461137703783",
+    "firebase_url": "https://mywhatsapp-6b62a.firebaseio.com",
+    "project_id": "mywhatsapp-6b62a",
+    "storage_bucket": "mywhatsapp-6b62a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461137703783:android:6470c1368e84cbac8f35c2",
+        "android_client_info": {
+          "package_name": "com.whatsapp.cursoandroid.jamiltondamasceno.whatsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461137703783-dcglujgqpurpba179i24rb300hvd7a26.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.whatsapp.cursoandroid.jamiltondamasceno.whatsapp",
+            "certificate_hash": "559defc2e0a8ac805b92ccc75a5352eeac76cf2f"
+          }
+        },
+        {
+          "client_id": "461137703783-i25d5ko751gii5kmmhlmfs0rlgpgelen.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPQtjowvmujtSwc836CZXpXlpF5acNl3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461137703783-i25d5ko751gii5kmmhlmfs0rlgpgelen.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
