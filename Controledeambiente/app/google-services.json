@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "237963209492",
+    "firebase_url": "https://controle-de-ambiente.firebaseio.com",
+    "project_id": "controle-de-ambiente",
+    "storage_bucket": "controle-de-ambiente.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237963209492:android:fd7d4c6db3b790476ab001",
+        "android_client_info": {
+          "package_name": "com.example.controledeambiente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237963209492-nn8ql7fup5c94ng0797cd5m8nt3k2mba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.controledeambiente",
+            "certificate_hash": "e5551626fc944e45e1a01b4f0763ff6e57687eff"
+          }
+        },
+        {
+          "client_id": "237963209492-pdf4i6c2g18i6v9k06ff97u4q87j59t7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-9CobHRkicfjh1MY1zx-zlbQrf8vqUpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237963209492-pdf4i6c2g18i6v9k06ff97u4q87j59t7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
