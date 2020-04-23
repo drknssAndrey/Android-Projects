@@ -1,2 +1,2 @@
-rootProject.name='Ambient Controll Project'
+rootProject.name='AmbientControllProject'
 include ':app'
